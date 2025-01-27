@@ -23,9 +23,9 @@ const MainPage = ({ clientData }) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        // "http://localhost:4000/sensor/verifyXymaClientsPassword",
         "http://43.204.133.45:4000/sensor/verifyXymaClientsPassword",
-        { username, password }
+        { username, password },
+        { withCredentials: true } // Make sure this is included
       );
       if (response.status === 200) {
         if (response.data.success === true) {
@@ -39,6 +39,7 @@ const MainPage = ({ clientData }) => {
       console.error("Error verifying password", error);
     }
   };
+  
 
   return (
     <div className="relative h-screen flex flex-col">

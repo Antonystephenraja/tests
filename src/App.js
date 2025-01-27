@@ -79,7 +79,6 @@ const App = () => {
           path="/dashboardPortal"
           element={<MainPage clientData={clientData} />}
         />
-
         {/* Protected routes */}
         <Route path="/" element={<ProtectedRoute />}>
           <Route
